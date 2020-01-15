@@ -1,6 +1,19 @@
 <html>
   <head>
     <title>A github page</title>
+    <script>
+      navigator.usb.getDevices().then(devices => {
+        console.log('Total devices: ' + devices.length);
+        devices.forEach(device => {
+          console.log(
+            'Product name: ' +
+              device.productName +
+              ', serial number ' +
+              device.serialNumber
+          );
+        });
+      });
+    </script>
   </head>
   <body>
     <h1>A simple github page!</h1>
